@@ -89,14 +89,7 @@ def process_rfps(rfps, keywords=KEYWORDS, log_skipped=False):
     scored_bids.sort(key=lambda x: x['score'], reverse=True)
     return scored_bids, skipped
 
-# Get API credentials from Streamlit secrets
-try:
-    email = st.secrets["api"]["email"]
-    token = st.secrets["api"]["token"]
-    DEFAULT_FEED_URL = f"https://www.governmentnavigator.com/api/bidfeed?email={email}&token={token}"
-except:
-    st.error("API credentials not configured. Please add them to Streamlit secrets.")
-    st.stop()
+DEFAULT_FEED_URL = "https://www.governmentnavigator.com/api/bidfeed?email=marcelo.molinari@commscope.com&token=22c7f7254d4202af5c73bd9108c527ed"
 
 st.title("RFPilot")
 st.write("RFP Scoring Dashboard: Automatically loads and scores the live RFP feed.")
