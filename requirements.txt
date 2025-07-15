@@ -3,3 +3,4 @@ pandas
 requests
 PyPDF2
 openai
+beautifulsoup4
