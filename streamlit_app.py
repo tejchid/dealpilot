@@ -94,7 +94,7 @@ email = os.getenv('GOVNAV_EMAIL', 'marcelo.molinari@commscope.com')
 token = os.getenv('GOVNAV_TOKEN', '22c7f7254d4202af5c73bd9108c527ed')
 DEFAULT_FEED_URL = f"https://www.governmentnavigator.com/api/bidfeed?email={email}&token={token}"
 
-st.title("RFPilot")
+st.title("Deal Pilot")
 st.write("RFP Scoring Dashboard: Automatically loads and scores the live RFP feed.")
 
 rfps = None
@@ -112,7 +112,7 @@ try:
     st.sidebar.image("ruckus_battle_card.png", use_container_width=True)
 except:
     st.sidebar.markdown("🏢 **RUCKUS NETWORKS**")
-st.sidebar.markdown("<div style='text-align:center; font-size:2em;'><b>RFPilot</b></div>", unsafe_allow_html=True)
+st.sidebar.markdown("<div style='text-align:center; font-size:2em;'><b>Deal Pilot</b></div>", unsafe_allow_html=True)
 
 st.markdown("""
 <style>
