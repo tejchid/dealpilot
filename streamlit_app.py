@@ -104,9 +104,11 @@ try:
 except Exception as e:
     st.error(f"Failed to fetch live feed: {e}")
 
-# Temporarily comment out image until it's uploaded properly
-# st.sidebar.image("ruckus_battle_card.png", use_container_width=True)
-st.sidebar.markdown("🏢 **RUCKUS NETWORKS**")
+# Try to load the image, fall back to text if it fails
+try:
+    st.sidebar.image("ruckus_battle_card.png", use_container_width=True)
+except:
+    st.sidebar.markdown("🏢 **RUCKUS NETWORKS**")
 st.sidebar.markdown("<div style='text-align:center; font-size:2em;'><b>RFPilot</b></div>", unsafe_allow_html=True)
 
 st.markdown("""
