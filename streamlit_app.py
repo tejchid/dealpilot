@@ -89,7 +89,10 @@ def process_rfps(rfps, keywords=KEYWORDS, log_skipped=False):
     scored_bids.sort(key=lambda x: x['score'], reverse=True)
     return scored_bids, skipped
 
-DEFAULT_FEED_URL = "https://www.governmentnavigator.com/api/bidfeed?email=marcelo.molinari@commscope.com&token=22c7f7254d4202af5c73bd9108c527ed"
+# Get API credentials from environment variables or use fallback
+email = os.getenv('GOVNAV_EMAIL', 'marcelo.molinari@commscope.com')
+token = os.getenv('GOVNAV_TOKEN', '22c7f7254d4202af5c73bd9108c527ed')
+DEFAULT_FEED_URL = f"https://www.governmentnavigator.com/api/bidfeed?email={email}&token={token}"
 
 st.title("RFPilot")
 st.write("RFP Scoring Dashboard: Automatically loads and scores the live RFP feed.")
